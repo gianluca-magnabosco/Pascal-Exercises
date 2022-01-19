@@ -10,6 +10,7 @@ On this repository you can find a list of solved algorithm and programming exerc
 
 
 
+
 ## Para os leitores brasileiros/falantes de português
 
 Esse repositório contém diversos exercícios e tarefas/trabalhos/provas de algoritmos e práticas de programação, nessa disciplina a linguagem utilizada foi Pascal, com o compilador e IDE Pascalzim, contém toda a minha evolução na matéria e o progresso feito durante o curso da disciplina, as listas de exercício não eram obrigatórias, porém realizei diversos dos exercícios propostos e pretendo terminar todas as listas no decorrer do próximo ano com o intuito de praticar.
