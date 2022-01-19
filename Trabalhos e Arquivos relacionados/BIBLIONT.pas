@@ -1,8 +1,8 @@
 UNIT BIBLIONT;
 
-interface //serve para criar as variáveis globais e indicar os módulos que fazem parte da UNIT
+interface //serve para criar as variaveis globais e indicar os mï¿½dulos que fazem parte da UNIT
 
-type  								//cria novos tipos de informaçao
+type  								//cria novos tipos de informaï¿½ao
 		 redata=record    //DESCRICAO do registro para o campo data invertido
 		  ano:string[4];     //4*8 --     32
 		  mes,dia:string[2]; //2*8+2*8 -- 32
@@ -19,15 +19,15 @@ type  								//cria novos tipos de informaçao
 			som,clg,clc,ccl:INTEGER;     //4*32 --     128
      end;                          //tamanho ==> 816 bits
 
-		 cc=record 			//descrição de registro para ser usada no vetor
+		 cc=record 			//descriï¿½ï¿½o de registro para ser usada no vetor
       pf:integer;      //--                32
       cc:string[35];   //35*8 --          280
      end;              //tamanho ==>      312
      
-     vetor=array[1..2000] of cc; 	// tipo vetor vetor de 2000 posições com duas informaçoes (integer e string[35]) por posição
+     vetor=array[1..2000] of cc; 	// tipo vetor vetor de 2000 posiï¿½ï¿½es com duas informaï¿½oes (integer e string[35]) por posiï¿½ï¿½o
      tipo=string[35];      				// tipo tipo 35 caracteres	
      a35=string[35];              // tipo a35 35 caracteres
-		 vet1=array[1..2000] of a35;  // tipo vet1 vetor de 2000 posições com uma informação, (string[35]) por posição
+		 vet1=array[1..2000] of a35;  // tipo vet1 vetor de 2000 posiï¿½ï¿½es com uma informaï¿½ï¿½o, (string[35]) por posiï¿½ï¿½o
 
     
 procedure termine;
@@ -35,20 +35,20 @@ procedure termine;
 
 PROCEDURE pebin1(vet:vetor;ext:tipo;t:integer;VAR posi:INTEGER);
 {pebin1 eh um procedimento que atraves de pequisa binaria devolve a posicao do elemento externo dentro de um vetor ou zero caso
- não encontre.}
+ nï¿½o encontre.}
  
 procedure cabeca1(relat:string[20];var pag:integer);
 {cabeca1 eh um procedimento que mostra o cabecalho dos relatorios e incrementa a pagina }
 
 procedure ordem(var vet:vetor; t:integer);
-{ordem eh um procedimento que ordena um vetor com DUAS informações por posicao(posicao=record com pf+cc)}
+{ordem eh um procedimento que ordena um vetor com DUAS informaï¿½ï¿½es por posicao(posicao=record com pf+cc)}
 
 procedure ordea(var vet:vet1; t:integer);
-{ordea eh um procedimento que ordena um vetor com UMA informação por posicao(string[35])}
+{ordea eh um procedimento que ordena um vetor com UMA informaï¿½ï¿½o por posicao(string[35])}
 
 function validacpf(num:string[11]):boolean;
 {validacpf eh uma funcao que calcula os digitos verificadores de um cpf e devolve true se digitos calculados iguais ao digitos
- lidos (índices 10 e 11). Transforma o string[11] em um vetor integer de 11 posiçoes}
+ lidos (ï¿½ndices 10 e 11). Transforma o string[11] em um vetor integer de 11 posiï¿½oes}
  
 function potr(x,y:integer):real;
 {pot eh uma funcao que devolve a potencia de x elevado a y, tipo real, aceita y negativo}
@@ -85,7 +85,7 @@ procedure termine;
 //================================================== 
 PROCEDURE pebin1(vet:vetor;ext:tipo;t:integer;VAR posi:INTEGER);//vet, ext, t por valor e posi por referencia, parametros formais
 														 // o resultado da tarefa eh devolvido em posi
-														 // vet possui duas informações por posicao o campo chave e a posicao fisica
+														 // vet possui duas informaï¿½ï¿½es por posicao o campo chave e a posicao fisica
 var ini,fim,meio,XX:integer; //variaveis locais
     achou:boolean;
 begin
@@ -127,7 +127,7 @@ var aux:cc;             //variaveis locais
     tro:boolean;
 begin
  tot:=t;
- jor:=1;  //variavel que conterah o total de elementos jah ordenados, começa com 1 (danca youtub, viu????)
+ jor:=1;  //variavel que conterah o total de elementos jah ordenados, comeï¿½a com 1 (danca youtub, viu????)
  repeat
   tro:=true;
   tot:=tot-jor;
@@ -142,12 +142,12 @@ begin
      jor:=1;     //se houve troca, jah ordenados volta para 1
     end
    else
-    jor:=jor+1; //não houve troca, incrementa jah ordenados
+    jor:=jor+1; //nï¿½o houve troca, incrementa jah ordenados
  until tro;
 end;
 //============================================================================================
 procedure ordea(var vet:vet1; t:integer);  //vet por referencia e t por valor, parametros formais
-var aux:a35;         //variáveis locais
+var aux:a35;         //variï¿½veis locais
     tot,a,jor:integer;
     tro:boolean;
 begin
@@ -178,13 +178,13 @@ var vet:array[1..11] of integer;   //variaveis locais
 begin
  aux:=true;
  for a:=1 to 11 do
-  val(num[a],vet[a],e);{o string "num" já vem validado}
+  val(num[a],vet[a],e);{o string "num" jï¿½ vem validado}
  a:=1;
  repeat                           //digitos iguais
    a:=a+1;
  until(a=11) or (vet[1]<>vet[a]);
  if(a=11)then                    //fim digitos iguais 
-  aux:=false //<<<<<<<<<<<<<<<<<<<ATENÇÃO PARA FUNCIONAR MUDAR =true PARA =false
+  aux:=false //<<<<<<<<<<<<<<<<<<<ATENï¿½ï¿½O PARA FUNCIONAR MUDAR =true PARA =false
  else 
   begin                          //calculo dos digitos verificadores
    f:=8;
@@ -227,7 +227,7 @@ var neg,ex,a,pot:integer; //variaveis locais
 //===================================================================================================                                
 function poti(x,y:integer):integer;// x,y por valor, parametros formais
                                    //o resultado da tarefa eh devolvido no nome da funcao
-var pot,a:integer;//variável local
+var pot,a:integer;//variï¿½vel local
  begin
   pot:=1;
   if(y>0)then 
